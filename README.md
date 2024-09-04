@@ -1,4 +1,5 @@
 Fertility & Infertility Drugs
+
 Plants
 Silver root - Silver recolour of Healroot
 A beautiful but slow growing silver plant. Tribes have long cultivated this plant for its effects on fertility. When harvested, the delicate shoots can be combined with Healroot and Psycite Tea to create a brew that greatly discourages pregnancy. Industrial societies can refine the shoots into a more effective pill using Industrial Medicine and Neuroamine. Glitter societies can further refine it into a longer acting pill.
