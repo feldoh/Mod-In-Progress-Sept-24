@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd"> <!-- Blood Tea -->
+    <xpath>Defs/HediffDef[defName="PregnantHuman"]/comps</xpath>
+        <value>
+            <li Class="HediffCompProperties_RemoveIfOtherHediff">
+                <hediffs>
+                    <li>BloodTeaHigh</li>
+                </hediffs>
+            <mtbHours>1</mtbHours>
+            </li>
+        </value>
+  </Operation>
+
+</Patch>

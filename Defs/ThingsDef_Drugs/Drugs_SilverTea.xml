@@ -81,12 +81,6 @@
           <statFactors>
             <Fertility>0.5</Fertility>
           </statFactors>
-          <capMods>
-            <li>
-              <capacity>Fertility</capacity>
-              <setMax>0.25</setMax>
-            </li>
-          </capMods>
         </li>
       </stages>
   </HediffDef>
