@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="MakeableDrugPillBase">
+      <defName>IndustrialFertilityDrugs</defName>
+      <label>fertility drugs</label>
+      <description>Fertility Drugs significantly increases fertility for 5 days, however it cannot completely reverse infertility. This is a more potent and refined form of Golden Tea.</description>
+      <descriptionHyperlinks>
+        <HediffDef>FertilityDrugsHigh</HediffDef>
+      </descriptionHyperlinks>
+      <graphicData>
+        <texPath>FertilityDrugsBirthControl/IndustrialFertilityDrugs</texPath>
+        <graphicClass>Graphic_StackCount</graphicClass>
+      </graphicData>
+      <rotatable>false</rotatable>
+      <statBases>
+        <WorkToMake>500</WorkToMake>
+        <MarketValue>25</MarketValue>
+        <Mass>0.005</Mass>
+      </statBases>
+      <techLevel>Industrial</techLevel>
+      <ingestible>
+        <drugCategory>Medical</drugCategory>
+        <outcomeDoers>
+          <li Class="IngestionOutcomeDoer_GiveHediff">
+            <hediffDef>FertilityDrugsHigh</hediffDef>
+            <severity>1.0</severity>
+          </li>
+        </outcomeDoers>
+      </ingestible>
+      <recipeMaker>
+        <researchPrerequisite>DrugProduction</researchPrerequisite>
+        <skillRequirements>
+          <Crafting>6</Crafting>
+        </skillRequirements>
+        <recipeUsers>
+          <li>DrugLab</li>
+        </recipeUsers>
+        <displayPriority>1800</displayPriority>
+      </recipeMaker>
+      <costList>
+        <GoldenTea>2</GoldenTea>
+        <Neutroamine>1</Neutroamine>
+        <MedicineIndustrial>2</MedicineIndustrial>
+        <GoldenrootHarvested>2</GoldenrootHarvested>
+      </costList>
+      <comps>
+        <li Class="CompProperties_Drug">
+        <listOrder>1000</listOrder>
+        <overdoseSeverityOffset>
+          <min>0.08</min>
+          <max>0.14</max>
+        </overdoseSeverityOffset>
+        </li>
+      </comps>
+    </ThingDef>
+
+    <HediffDef>
+      <defName>FertilityDrugsHigh</defName>
+      <label>fertility drugs</label>
+      <labelNoun>the effects of taking fertility drugs</labelNoun>
+      <description>fertility drugs in the bloodstream. Drinking it greatly encourages pregnancy for 5 days,  but cannot completly reverse infertility.</description>
+      <hediffClass>Hediff_High</hediffClass>
+      <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+      <scenarioCanAdd>true</scenarioCanAdd>
+      <maxSeverity>1.0</maxSeverity>
+      <isBad>false</isBad>
+      <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>300000</disappearsAfterTicks> <!-- 5 days -->  
+        </li>
+        <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.18</severityPerDay>
+        </li>
+      </comps>
+        <stages>
+          <li>
+            <statFactors>
+              <Fertility>2.5</Fertility>
+            </statFactors>
+          </li>
+        </stages>
+    </HediffDef>
+  
+  
+
+
+
+  </Defs> 

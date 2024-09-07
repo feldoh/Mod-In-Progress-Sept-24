@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="MakeableDrugPillBase">
+      <defName>GlitterFertilityDrugs</defName>
+      <label>Glitter Fertility Drugs</label>
+      <description>Glitter Fertility Drugs significantly increases fertility for 15 days, however it cannot completely reverse infertility. This can also be refined into an implant that is even more powerful.</description>
+      <descriptionHyperlinks>
+        <HediffDef>GlitterFertilityDrugsHigh</HediffDef>
+      </descriptionHyperlinks>
+      <graphicData>
+        <texPath>FertilityDrugsBirthControl/GlitterFertilityDrugs</texPath>
+        <graphicClass>Graphic_StackCount</graphicClass>
+      </graphicData>
+      <rotatable>false</rotatable>
+      <statBases>
+        <WorkToMake>750</WorkToMake>
+        <MarketValue>50</MarketValue>
+        <Mass>0.005</Mass>
+      </statBases>
+      <techLevel>Ultra</techLevel>
+      <ingestible>
+        <drugCategory>Medical</drugCategory>
+        <outcomeDoers>
+          <li Class="IngestionOutcomeDoer_GiveHediff">
+            <hediffDef>GlitterFertilityDrugsHigh</hediffDef>
+            <severity>1.0</severity>
+          </li>
+        </outcomeDoers>
+      </ingestible>
+      <recipeMaker>
+        <researchPrerequisites>
+          <li>GrowthVats</li>
+        </researchPrerequisites>
+        <skillRequirements>
+          <Crafting>8</Crafting>
+        </skillRequirements>
+        <recipeUsers>
+          <li>DrugLab</li>
+        </recipeUsers>
+        <displayPriority>1800</displayPriority>
+      </recipeMaker>
+      <costList>
+        <IndustrialBirthControl>2</IndustrialBirthControl>
+        <GoldenrootHarvested>2</GoldenrootHarvested>
+        <Neutroamine>2</Neutroamine>
+        <MedicineUltratech>2</MedicineUltratech>
+      </costList>
+      <comps>
+        <li Class="CompProperties_Drug">
+        <listOrder>1000</listOrder>
+        <overdoseSeverityOffset>
+          <min>0.08</min>
+          <max>0.14</max>
+        </overdoseSeverityOffset>
+        </li>
+      </comps>
+    </ThingDef>
+
+    <HediffDef>
+      <defName>GlitterFertilityDrugsHigh</defName>
+      <label>Glitter Fertility Drugs</label>
+      <labelNoun>the effects of taking glitter fertility drugs</labelNoun>
+      <description>Glitter Birth Control in the bloodstream. Glitter Fertility Drugs significantly increases fertility for 15 days.</description>
+      <hediffClass>Hediff_High</hediffClass>
+      <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+      <scenarioCanAdd>true</scenarioCanAdd>
+      <maxSeverity>1.0</maxSeverity>
+      <isBad>false</isBad>
+      <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>900000</disappearsAfterTicks> <!-- 15 days -->  
+        </li>
+        <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.06</severityPerDay>
+        </li>
+      </comps>
+        <stages>
+          <li>
+            <statFactors>
+              <Fertility>5.0</Fertility>
+            </statFactors>
+          <capMods>
+            <li>
+              <capacity>Fertility</capacity>
+              <setMax>10</setMax>
+            </li>
+          </capMods>
+        </li>
+        </stages>
+    </HediffDef>
+  
+  
+
+
+
+  </Defs> 

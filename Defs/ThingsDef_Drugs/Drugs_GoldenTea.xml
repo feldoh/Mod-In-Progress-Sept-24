@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="MakeableDrugBase">
+      <defName>GoldenTea</defName>
+      <label>golden tea</label>
+      <description>A bitter tea infused with leaves of the goldenroot plant. Drinking it greatly encourages pregnancy for 3 days,  but cannot completly reverse infertility. This tea is easy to produce at cooking facilities.</description>
+      <descriptionHyperlinks>
+        <HediffDef>GoldenTeaHigh</HediffDef>
+      </descriptionHyperlinks>
+      <graphicData>
+        <texPath>FertilityDrugsBirthControl/GoldenTea</texPath>
+        <graphicClass>Graphic_StackCount</graphicClass>
+      </graphicData>
+      <rotatable>false</rotatable>
+      <statBases>
+        <WorkToMake>400</WorkToMake>
+        <MarketValue>10</MarketValue>
+        <Mass>0.05</Mass>
+        <DeteriorationRate>6</DeteriorationRate>
+      </statBases>
+      <techLevel>Neolithic</techLevel>
+      <ingestible>
+        <foodType>Fluid, Processed</foodType>
+        <drugCategory>Medical</drugCategory>
+        <outcomeDoers>
+          <li Class="IngestionOutcomeDoer_GiveHediff">
+            <hediffDef>GoldenTeaHigh</hediffDef>
+            <severity>1.0</severity>
+          </li>
+        </outcomeDoers>
+      </ingestible>
+      <recipeMaker>
+        <researchPrerequisite>PsychoidBrewing</researchPrerequisite>
+        <skillRequirements>
+          <Cooking>2</Cooking>
+        </skillRequirements>
+        <recipeUsers>
+          <li>Campfire</li>
+          <li>ElectricStove</li>
+          <li>FueledStove</li>
+        </recipeUsers>
+        <displayPriority>1800</displayPriority>
+      </recipeMaker>
+      <costList>
+        <GoldenrootHarvested>4</GoldenrootHarvested>
+        <PsychiteTea>1</PsychiteTea>
+        <MedicineHerbal>2</MedicineHerbal>
+      </costList>
+      <comps>
+        <li Class="CompProperties_Drug">
+        <listOrder>1000</listOrder>
+        <overdoseSeverityOffset>
+          <min>0.08</min>
+          <max>0.14</max>
+        </overdoseSeverityOffset>
+        </li>
+      </comps>
+    </ThingDef>
+
+    <HediffDef>
+      <defName>GoldenTeaHigh</defName>
+      <label>golden tea</label>
+      <labelNoun>the effects of taking golden tea</labelNoun>
+      <description>golden tea in the bloodstream. Drinking it greatly encourages pregnancy for 3 days,  but cannot completly reverse infertility.</description>
+      <hediffClass>Hediff_High</hediffClass>
+      <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+      <scenarioCanAdd>true</scenarioCanAdd>
+      <maxSeverity>1.0</maxSeverity>
+      <isBad>false</isBad>
+      <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>180000</disappearsAfterTicks> <!-- 3 day -->  
+        </li>
+        <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.3</severityPerDay>
+        </li>
+      </comps>
+        <stages>
+          <li>
+            <statFactors>
+              <Fertility>1.5</Fertility>
+            </statFactors>
+          </li>
+        </stages>
+    </HediffDef>
+  
+  
+
+
+
+  </Defs> 

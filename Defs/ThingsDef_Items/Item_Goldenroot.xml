@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <ThingDef ParentName="PlantFoodRawBase">
+    <defName>GoldenrootHarvested</defName>
+    <label>Goldenroot</label>
+
+    <!-- The full description of this item. It is seen by players when inspecting the full stat card -->
+    <description>Raw Goldenroot. This be combined with Healroot and Psycite Tea to create a brew that greatly encourages pregnancy. Industrial societies can refine the shoots into a more effective pill using Industrial Medicine and Neutroamine. Glitter societies can further refine it into a longer acting pill.</description>
+
+    <!-- Allows this weapon to be used by pawn backstories as a starting possession -->
+    <possessionCount>10</possessionCount>
+
+    <!-- Sets the item graphic for this ThingDef -->
+    <graphicData>
+      <texPath>FertilityDrugsBirthControl/GoldenrootHarvested</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+
+    <!-- Determines base stats for this item -->
+    <statBases>
+      <!-- All vanilla raw plant food has 1.1 as their MarketValue -->
+      <MarketValue>1.1</MarketValue>
+    </statBases>
+
+    <!-- Sets various properties pertaining to ingestibility -->
+    <ingestible>
+      <!-- Sets what kind of food this item is considered for purposes of what animals are willing to eat it -->
+      <foodType>VegetableOrFruit</foodType>
+    </ingestible>
+
+    <!-- Adds various thing components (ThingComps) to extend the behavior of this Thing -->
+    <comps>
+
+      <!-- CompProperties_Rottable causes this item to rot if it is not frozen -->
+      <li Class="CompProperties_Rottable">
+
+        <!-- The number of days this item takes to rot from fresh -->
+        <!-- At 30 days, it rots slower than raw fruits, but faster than grains such as rice or corn -->
+        <daysToRotStart>30</daysToRotStart>
+
+        <!-- If set to true, this item is destroyed if it fully rots -->
+        <!-- All vanilla raw food types are destroyed when rotten -->
+        <rotDestroys>true</rotDestroys>
+      </li>
+
+    </comps>
+
+  </ThingDef>
+
+</Defs>

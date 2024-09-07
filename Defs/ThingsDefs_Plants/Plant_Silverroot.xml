@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <ThingDef ParentName="PlantBase" Name="SilverrootBase" Abstract="True">
+
+    <!-- Stat bases are copied from vanilla healroot -->
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Nutrition>0.2</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>FertilityDrugsBirthControl/SilverrootPlant</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <selectable>true</selectable>
+    <pathCost>14</pathCost>
+    <ingestible/>
+
+    <plant>
+      <immatureGraphicPath>FertilityDrugsBirthControl/ImmatureSilverroot</immatureGraphicPath>
+      <growDays>8</growDays>
+      <dieIfLeafless>false</dieIfLeafless>
+      <harvestWork>400</harvestWork>
+      <harvestTag>Standard</harvestTag>
+      <harvestedThingDef>SilverrootHarvested</harvestedThingDef>
+      <harvestYield>8</harvestYield>
+      <topWindExposure>0.1</topWindExposure>
+      <visualSizeRange>0.3~1.0</visualSizeRange>
+      <wildOrder>2</wildOrder>
+      <allowAutoCut>false</allowAutoCut>
+    </plant>
+  </ThingDef>
+
+  <!-- Cultivated Silverroot -->
+  <ThingDef ParentName="SilverrootBase">
+    <defName>Silverroot</defName>
+    <label>Silverroot</label>
+    <description>A beautiful but slow growing silver plant. Tribes have long cultivated this plant for its effects on fertility. When harvested, the delicate shoots can be combined with Healroot and Psycite Tea to create a brew that greatly discourages pregnancy. Industrial societies can refine the shoots into a more effective pill using Industrial Medicine and Neutroamine. Glitter societies can further refine it into a longer acting pill.</description>
+
+    <plant>
+      <growDays>5</growDays>
+      <sowWork>250</sowWork>
+      <sowMinSkill>6</sowMinSkill>
+      <sowTags>
+        <li>Ground</li>
+        <li>Hydroponic</li>
+      </sowTags>
+      <purpose>Health</purpose>
+    </plant>
+
+  </ThingDef>
+
+  <!-- Wild Silverroot -->
+  <ThingDef ParentName="SilverrootBase">
+    <defName>SilverrootWild</defName>
+    <label>wild Silverroot</label>
+    <description>A beautiful but slow growing silver plant. Tribes have long cultivated this plant for its effects on fertility. When harvested, the delicate shoots can be combined with Healroot and Psycite Tea to create a brew that greatly discourages pregnancy. Industrial societies can refine the shoots into a more effective pill using Industrial Medicine and Neutroamine. Glitter societies can further refine it into a longer acting pill.</description>
+    <neverMultiSelect>false</neverMultiSelect>
+
+    <plant>
+      <wildClusterRadius>4</wildClusterRadius>
+      <wildClusterWeight>80</wildClusterWeight>
+      <wildBiomes>
+        <TemperateForest>0.05</TemperateForest>
+        <TemperateSwamp>0.05</TemperateSwamp>
+        <BorealForest>0.16</BorealForest>
+        <Tundra>0.05</Tundra>
+        <ColdBog>0.05</ColdBog>
+      </wildBiomes>
+    </plant>
+
+  </ThingDef>
+
+</Defs>

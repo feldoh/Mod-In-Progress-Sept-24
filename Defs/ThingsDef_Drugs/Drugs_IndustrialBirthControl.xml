@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="MakeableDrugPillBase">
+      <defName>IndustrialBirthControl</defName>
+      <label>birth control</label>
+      <description>Birth Control completely prevents pregnancy for 5 days. This is a more potent and refined form of Silver Tea.</description>
+      <descriptionHyperlinks>
+        <HediffDef>BirthControlHigh</HediffDef>
+      </descriptionHyperlinks>
+      <graphicData>
+        <texPath>FertilityDrugsBirthControl/IndustrialBirthControl</texPath>
+        <graphicClass>Graphic_StackCount</graphicClass>
+      </graphicData>
+      <rotatable>false</rotatable>
+      <statBases>
+        <WorkToMake>500</WorkToMake>
+        <MarketValue>25</MarketValue>
+        <Mass>0.005</Mass>
+      </statBases>
+      <techLevel>Industrial</techLevel>
+      <ingestible>
+        <drugCategory>Medical</drugCategory>
+        <outcomeDoers>
+          <li Class="IngestionOutcomeDoer_GiveHediff">
+            <hediffDef>BirthControlHigh</hediffDef>
+            <severity>1.0</severity>
+          </li>
+        </outcomeDoers>
+      </ingestible>
+      <recipeMaker>
+        <researchPrerequisite>DrugProduction</researchPrerequisite>
+        <skillRequirements>
+          <Crafting>6</Crafting>
+        </skillRequirements>
+        <recipeUsers>
+          <li>DrugLab</li>
+        </recipeUsers>
+        <displayPriority>1800</displayPriority>
+      </recipeMaker>
+      <costList>
+        <SilverTea>2</SilverTea>
+        <Neutroamine>2</Neutroamine>
+        <MedicineIndustrial>2</MedicineIndustrial>
+        <SilverrootHarvested>2</SilverrootHarvested>
+      </costList>
+      <comps>
+        <li Class="CompProperties_Drug">
+        <listOrder>1000</listOrder>
+        <overdoseSeverityOffset>
+          <min>0.08</min>
+          <max>0.14</max>
+        </overdoseSeverityOffset>
+        </li>
+      </comps>
+    </ThingDef>
+
+    <HediffDef>
+      <defName>BirthControlHigh</defName>
+      <label>birth control</label>
+      <labelNoun>the effects of taking birth control</labelNoun>
+      <description>birth control in the bloodstream. Birth Control completely prevents pregnancy for 5 days. This is a more potent and refined form of Silver Tea.</description>
+      <hediffClass>Hediff_High</hediffClass>
+      <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+      <scenarioCanAdd>true</scenarioCanAdd>
+      <maxSeverity>1.0</maxSeverity>
+      <isBad>false</isBad>
+      <preventsPregnancy>true</preventsPregnancy>
+      <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>300000</disappearsAfterTicks> <!-- 5 days -->  
+        </li>
+        <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.18</severityPerDay>
+        </li>
+      </comps>
+        <stages>
+          <li>
+            <statFactors>
+              <Fertility>0</Fertility>
+            </statFactors>
+            <capMods>
+              <li>
+                <capacity>Fertility</capacity>
+                <setMax>0.01</setMax>
+              </li>
+            </capMods>
+          </li>
+        </stages>
+    </HediffDef>
+  
+  
+
+
+
+  </Defs> 
